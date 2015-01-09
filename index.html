@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Get pop-up href example</title>
+	</head>
+	<body>
+		<script>
+			var popupWindow = null;
+
+			function onClose(event) {
+				alert(popupWindow.location.href);
+			}
+
+			function openPopup() {
+				popupWindow = window.open('/popup.html?Hello_world');
+				popupWindow.addEventListener("beforeunload", onClose);
+			}
+		</script>
+
+		<button onclick="openPopup()">Open pop-up and get href</button>
+	</body>
+</html>
